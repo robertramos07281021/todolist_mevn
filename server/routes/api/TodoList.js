@@ -10,7 +10,6 @@ router
     try {
       const todoList = await Todo.find();
       if (!todoList) throw new Error("No Todo List found");
-      console.log(todoList);
       res.status(200).json(todoList);
     } catch (error) {
       res.status(500).json({ message: error.message });
